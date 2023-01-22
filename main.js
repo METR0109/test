@@ -191,3 +191,73 @@
 // } while (true);
 
 // ---#8---
+// Введіть рядок в prompt
+// Виведіть кількість голосних букв в цьому рядку
+
+// const message = prompt('Enter message:');
+// let total = 0;
+// for (i = 0; i < message.length; i += 1) {
+//   const letter = message[i];
+//   console.log(message);
+//   if (
+//     letter === 'a' ||
+//     letter === 'e' ||
+//     letter === 'y' ||
+//     letter === 'i' ||
+//     letter === 'o' ||
+//     letter === 'u'
+//   ) {
+//     total += 1;
+//   }
+// }
+// console.log(total);
+
+// const vowels = ['a', 'e', 'y', 'u', 'i', 'o'];
+// const result = message
+//   .split('')
+//   .filter((letter) => vowels.includes(letter)).length;
+// console.log(result);
+
+// ---#9---
+// Напишіть програму для заміни кожного символу в заданому рядку символом,
+// що йде наступним за ним в алфавіті
+
+// const message = prompt('Enter message:');
+// const nextMessage = '';
+// for (let i = 0; i < message.length; i += 1) {
+//   const element = message[i];
+//   console.log(element);
+//   const code = element.charCodeAt() + 1;
+//   console.log(code);
+// }
+
+// ---#10---
+// За кожен місяць податкова нараховує на ЗП розробника 5% від суми.
+// Напишіть консольну функцію, на яку користувач вводить суму зп
+// і кількість місяців з допомогою prompt() не забуваємо, що промпт повертає рядок.
+// А податкова обчислює кінцеву суму зп без податків,
+// Суму податків всього і чистий дохід розробника за кожен місяць.
+// Для обчислення суми з урахуванням відсотків використовуйте цикл for.
+
+// const salary = 10000;
+// const taxes = 0.05;
+// const period = 12;
+
+// let purSalary = 0;
+// let allTaxes = 0;
+
+// for (let i = 0;)
+
+// ---#11---
+// Напишіть програму для перевірки чи є число простим чи ні
+
+// const number = prompt('Enter number:');
+
+// let isPrime = true;
+// for (let i = 2; i < number; i++) {
+//   if (number % i === 0) {
+//     isPrime = false;
+//     break;
+//   }
+// }
+// console.log(isPrime);
