@@ -261,3 +261,24 @@
 //   }
 // }
 // console.log(isPrime);
+
+// function countBy(x, n) {
+//   let z = [];
+//   //   let number = x;
+//   for (let i = 0; i < n; i += 1) {
+//     z.push(x * (i + 1));
+//   }
+
+//   //   while (z.length < n) {
+//   //     if (number % x === 0) {
+//   //       z.push(number);
+//   //     }
+//   //     number += 1;
+//   //   }
+
+//   return z;
+// }
+
+// console.log(countBy(1, 10));
+// console.log(countBy(2, 5));
+// console.log(countBy(-100, 10));
