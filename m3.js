@@ -224,6 +224,8 @@
 //   }
 // }
 
+// debugger;
+
 // ---12---
 function countProps(object) {
   // Change code below this line
