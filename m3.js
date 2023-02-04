@@ -252,19 +252,30 @@ for (let key of keys) {
 }
 
 // ---14---
-function countProps(object) {
-  // Change code below this line
-  let propCount = 0;
+// function countProps(object) {
+//   // Change code below this line
+//   let propCount = 0;
 
-  for (const key in object) {
-    if (object.hasOwnProperty(key)) {
-      propCount += 1;
-    }
-  }
+//   for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//       propCount += 1;
+//     }
+//   }
 
-  return propCount;
-  // Change code above this line
-}
+//   return propCount;
+//   // Change code above this line
+// }
+
+// function countProps(object) {
+//   // Change code below this line
+//   let propCount = 0;
+//   const keys = Object.keys(object);
+//   for (let key of keys) {
+//     propCount += 1;
+//   }
+//   return propCount;
+//   // Change code above this line
+// }
 
 // ---15---
 // ---16---
