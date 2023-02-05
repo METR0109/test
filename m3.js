@@ -227,29 +227,29 @@
 // debugger;
 
 // ---12---
-function countProps(object) {
-  // Change code below this line
-  let propCount = 0;
-  const keys = Object.keys(object);
-  for (let key of keys) {
-    propCount += 1;
-  }
-  return propCount;
-  // Change code above this line
-}
+// function countProps(object) {
+//   // Change code below this line
+//   let propCount = 0;
+//   const keys = Object.keys(object);
+//   for (let key of keys) {
+//     propCount += 1;
+//   }
+//   return propCount;
+//   // Change code above this line
+// }
 
 // ---13---
-const apartment = {
-  descr: 'Spacious apartment in the city center',
-  rating: 4,
-  price: 2153,
-};
-const values = [];
-// Change code below this line
-const keys = Object.keys(apartment);
-for (let key of keys) {
-  values.push(apartment[key]);
-}
+// const apartment = {
+//   descr: 'Spacious apartment in the city center',
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// // Change code below this line
+// const keys = Object.keys(apartment);
+// for (let key of keys) {
+//   values.push(apartment[key]);
+// }
 
 // ---14---
 // function countProps(object) {
