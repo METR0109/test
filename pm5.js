@@ -237,63 +237,6 @@
 // calculator.read(3, 4);
 
 // ---14---
-
-// // Напиши скрипт управління особистим кабінетом інтернет банку
-// //Є об'єкт account у якому необхідно реалізувати
-// //методи для роботи з балансом та історією транзакцій
-
-// // Типів транзакцій лише два.
-// // Можна покласти або зняти гроші з рахунку
-// const Transaction = {
-//   DEPOSIT: "deposit",
-//   WITHDRAW: "withdraw",
-// };
-
-// //Кожна транзакція це об'єкт з властивостямиЖ id, type, amount
-
-// const account = {
-//   //поточний баланс рахунку
-//   balance: 0,
-
-//   // Історія транзакцій
-//   transactions: [],
-
-//   //Метод створює та повертає об'єкт транзакцій
-//   //Приймає суму та тип транзакцій
-//   createTransaction(type, amount) {
-//     return {
-//       type,
-//       amount,
-//     };
-//   },
-
-//   //Метод відповідає за додавання суми до балансу.
-//   //Приймає суму транкціонації.
-//   //Викликає createTransaction для створення об'єкта транзакції
-//   //після чого додає їх у історію транзакцій
-//   deposit(amount) {},
-
-//   //Метод відповідає за зняття суми з балансу.
-//   //Приймає суму транкціонації.
-//   //Викликає createTransaction для створення об'єкта транзакції
-//   //після чого додає їх у історію транзакцій
-//   //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
-//   //що недостатньо коштів на рахунку
-//   withdraw(amount) {},
-
-//   //Метод повертає поточний баланс
-//   getBalance() {},
-
-//   //Метод шукає та повертає об'єкт транзакції по id
-//   getTransactionDetails(id) {},
-
-//   //Метод повертає кількість засобів певного типу
-//   //транзакції з історії транзакцій
-//   getTransactionType(type) {},
-// };
-
-// ------------------------------------------
-
 // Напиши скрипт управління особистим кабінетом інтернет банку
 //Є об'єкт account у якому необхідно реалізувати
 //методи для роботи з балансом та історією транзакцій
@@ -301,87 +244,80 @@
 // Типів транзакцій лише два.
 // Можна покласти або зняти гроші з рахунку
 const Transaction = {
-  DEPOSIT: 'deposit',
-  WITHDRAW: 'withdraw',
-};
+    DEPOSIT: "deposit",
+    WITHDRAW: "withdraw",
+  };
 
-//Кожна транзакція це об'єкт з властивостямиЖ id, type, amount
+  //Кожна транзакція це об'єкт з властивостямиЖ id, type, amount
 
-const account = {
-  //поточний баланс рахунку
-  balance: 23000,
+  const account = {
+    //поточний баланс рахунку
+    balance: 23000,
 
-  // Історія транзакцій
-  transactions: [
-    {
-      type: 'deposit',
-      amount: 23000,
-      id: 1676803548235,
-      date: 'Sun Feb 19 2023 12:45:48 GMT+0200 (Восточная Европа, стандартное время)',
+    // Історія транзакцій
+    transactions: [{type: 'deposit', amount: 23000, id: 1676803531156, date: 'Sun Feb 19 2023 12:45:31 GMT+0200 (за східноєвропейським стандартним часом)'}],
+
+    //Метод створює та повертає об'єкт транзакцій
+    //Приймає суму та тип транзакцій
+    createTransaction(type, amount) {
+      return {
+        type,
+        amount,
+        id: Date.now(),
+        date: new Date(),
+      };
     },
-  ],
 
-  //Метод створює та повертає об'єкт транзакцій
-  //Приймає суму та тип транзакцій
-  createTransaction(type, amount) {
-    return {
-      type,
-      amount,
-      id: Date.now(),
-      date: new Date(),
+    //Метод відповідає за додавання суми до балансу.
+    //Приймає суму транкціонації.
+    //Викликає createTransaction для створення об'єкта транзакції
+    //після чого додає їх у історію транзакцій
+    deposit(amount) {
+      this.balance += amount;
+      const newOparation = this.createTransaction(Transaction.DEPOSIT, amount);
+      this.transactions.push(newOparation);
     };
-  },
-
-  //Метод відповідає за додавання суми до балансу.
-  //Приймає суму транкціонації.
-  //Викликає createTransaction для створення об'єкта транзакції
-  //після чого додає їх у історію транзакцій
-  deposit(amount) {
-    this.balance += amount;
-    const newOparation = this.createTransaction(Transaction.DEPOSIT, amount);
-    this.transactions.push(newOparation);
-  },
-
-  //Метод відповідає за зняття суми з балансу.
-  //Приймає суму транкціонації.
-  //Викликає createTransaction для створення об'єкта транзакції
-  //після чого додає їх у історію транзакцій
-  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
-  //що недостатньо коштів на рахунку
-  withdraw(amount) {
-    if (this.balance < amount) {
-      console.log('Error! You heve no enough money');
-      return;
+//Метод відповідає за зняття суми з балансу.
+    //Приймає суму транкціонації.
+    //Викликає createTransaction для створення об'єкта транзакції
+    //після чого додає їх у історію транзакцій
+    //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+    //що недостатньо коштів на рахунку
+    withdraw(amount) {
+        if(this.balance < amount) {
+            console.log('Error! You have no enough money!');
+        return
     }
-    this.balance -= amount;
-    const newOparation = this.createTransaction(Transaction.WITHDRAW, amount);
-    this.transactions.push(newOparation);
-  },
 
-  //Метод повертає поточний баланс
-  getBalance() {
-    return this.balance;
-  },
+        this.balance -= amount;
+      const newOparation = this.createTransaction(Transaction.WITHDRAW, amount);
+      this.transactions.push(newOparation);
+    },
 
-  //Метод шукає та повертає об'єкт транзакції по id
-  getTransactionDetails(id) {
-    return this.transactions.find(el => el.type === type);
-  },
+    //Метод повертає поточний баланс
+    getBalance() {
+        return this.balance;
+    },
 
-  //Метод повертає кількість засобів певного типу
-  //транзакції з історії транзакцій
-  getTransactionType(type) {
-    return this.transactions.filter(el => el.type === type);
-  },
-};
+    //Метод шукає та повертає об'єкт транзакції по id
+    getTransactionDetails(id) {
+return this.transactions.find(el => el.id === id);
+    },
 
-account.deposit(23000);
-account.withdraw(10000);
-account.withdraw(15000);
-console.log(account);
-console.log(account.getTransactionDetails(1788743784));
-console.log(account.getTransactionType(1788743784));
-console.log(account.getTransactionType(1788743784));
+    //Метод повертає кількість засобів певного типу
+    //транзакції з історії транзакцій
+    getTransactionType(type) {
+        return this.transactions.filter(el => el.type === type);
+    },
+  };
+
+  account.deposit(23000);
+  account.withdraw(10000);
+  account.withdraw(15000);
+  console.log(account);
+  console.log(account.getTransactionDetails(1676803531156));
+  console.log(account.getTransactionType(Transaction.DEPOSIT));
+  console.log(account.getTransactionType(Transaction.WITHDRAW));
 
 // ---15---
 // ---16---
