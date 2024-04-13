@@ -38,6 +38,24 @@
 // const a = foo();
 // console.log(a);
 
+// if (null) {
+//   console.log('Block if');
+// } else {
+//   console.log('Block else');
+// }
+
+// if (0) {
+//   console.log('Block if');
+// } else {
+//   console.log('Block else');
+// }
+
+// if ('') {
+//   console.log('Block if');
+// } else {
+//   console.log('Block else');
+// }
+
 /**
  * Напиши функцію calcBMI(weight, height) яка розраховує та повертає індекс
  * маси тіла людини. Для цього необхідно розділити вагу на
@@ -60,3 +78,4 @@
 
 // const bmi = calcBMI("88,3", "1.75");
 // console.log(bmi);
+
