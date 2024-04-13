@@ -79,3 +79,43 @@
 // const bmi = calcBMI("88,3", "1.75");
 // console.log(bmi);
 
+// Create a function with two arguments that will return an array of the first n multiples of x.
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+// Return the results as an array or list ( depending on language ).
+// ExamplescountBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+// countBy(2,5) === [2,4,6,8,10]
+
+// const ExamplescountBy = (a, b) => {
+//   const result = [];
+//   for (let i = 0; i <= b; i++) {
+//     result.push(a * i);
+//   }
+//   return result;
+// };
+// console.log(ExamplescountBy(2, 5));
+
+// ?const countBy = (arr) => {
+// ?    const result = []
+//  ?   arr.reduce
+// ? }
+
+// Examples:
+// 1) n =   3, x = 1, y = 3 =>  true because   3 is divisible by 1 and 3
+// 2) n =  12, x = 2, y = 6 =>  true because  12 is divisible by 2 and 6
+// 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
+// 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
+// Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero numbers.
+
+// const num = (n, x, y) => {
+//   return n % x === 0 && n % y === 0;
+// };
+
+// console.log(num(100, 5, 3)); // false
+
+const num = (n, x, y) => {
+  return n % x === 0 && n % y === 0
+    ? `${n} is divisible by ${x} and ${y}`
+    : `${n} is not divisible by ${x} or ${y}`;
+};
+
+console.log(num(100, 5, 3));
