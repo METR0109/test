@@ -112,10 +112,31 @@
 
 // console.log(num(100, 5, 3)); // false
 
-const num = (n, x, y) => {
-  return n % x === 0 && n % y === 0
-    ? `${n} is divisible by ${x} and ${y}`
-    : `${n} is not divisible by ${x} or ${y}`;
-};
+// const num = (n, x, y) => {
+//   return n % x === 0 && n % y === 0
+//     ? `${n} is divisible by ${x} and ${y}`
+//     : `${n} is not divisible by ${x} or ${y}`;
+// };
 
-console.log(num(100, 5, 3));
+// console.log(num(100, 5, 3));
+
+// TODO ==========
+
+// "scissors", "paper" --> "Player 1 won!"
+// "scissors", "rock" --> "Player 2 won!"
+// "paper", "paper" --> "Draw!"
+
+const rockScissorsPaper = (pOne, pTwo) => {
+  pOne.toLowerCase();
+    pTwo.toLowerCase();
+    if (pOne === "scissors" && pTwo === "paper"
+        || pOne === "paper" && pTwo === "rock"
+        || pOne === "rock" && pTwo === "scissors") {
+       return console.log("Player 1 won!");
+    } else if {
+            
+        }
+        
+            
+        }
+};
